@@ -1,0 +1,8 @@
+:HL["/skalsky-dvur-web/_next/static/chunks/1sc3x72rc33-4.css","style"]
+:HL["/skalsky-dvur-web/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/skalsky-dvur-web/_next/static/media/70e3db2de7f94926-s.p.39pl-v7c3qrze.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/skalsky-dvur-web/_next/static/media/a88409fdd7dc121c-s.p.1mvr14jy3vxq7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/skalsky-dvur-web/_next/static/media/ae8872c8a32e309c-s.p.0iqen1t80zg64.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/skalsky-dvur-web/_next/static/media/b49b0d9b851e4899-s.p.2zyohmvb-ks7f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/skalsky-dvur-web/_next/static/media/e8f2fbee2754df70-s.p.1dqa_6e_ad4sj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"konferencni-prostory","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"0YSiFmXzOlt1QYjpk4Z3N"}
