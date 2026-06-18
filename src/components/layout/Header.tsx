@@ -25,8 +25,6 @@ export function Header() {
   const isHome = pathname === "/";
   const solid = scrolled || !isHome;
 
-  const leftNav = nav.slice(0, 5);
-
   return (
     <header
       className={cn(
@@ -38,8 +36,8 @@ export function Header() {
     >
       <div className="mx-auto grid max-w-[1280px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 md:px-10">
         {/* Left: desktop nav */}
-        <nav className="hidden items-center gap-1 xl:flex">
-          {leftNav.map((item) => (
+        <nav className="hidden items-center gap-0.5 xl:flex">
+          {nav.map((item) => (
             <div
               key={item.href}
               className="relative"
@@ -49,7 +47,7 @@ export function Header() {
               <Link
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-1 px-2.5 py-2 font-body text-[11px] font-medium uppercase tracking-wide-luxe transition-colors",
+                  "flex items-center gap-1 px-2 py-2 font-body text-[10.5px] font-medium uppercase tracking-wide-luxe transition-colors",
                   solid ? "text-ink hover:text-gold-dark" : "text-cream hover:text-white",
                 )}
               >
