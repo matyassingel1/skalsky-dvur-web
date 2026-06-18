@@ -1,26 +1,138 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ */
+/*  Koncept „ZRCADLO VYSOČINY" — luxusní hotel à la Chateau Orlice     */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Cream / sand surfaces */
+  --color-cream: #f3ede1;
+  --color-sand: #e9e1d1;
+  --color-sand-2: #ded3bd;
+
+  /* Gold / brass */
+  --color-gold: #c2a06a;
+  --color-gold-dark: #a9874f;
+  --color-gold-soft: #d8c39a;
+
+  /* Ink */
+  --color-ink: #1a1a1a;
+  --color-ink-2: #2a2722;
+  --color-ink-soft: #4a443b;
+  --color-cream-muted: #8a8073;
+
+  /* Fonts (--ff-* injected by next/font) */
+  --font-display: var(--ff-display), Georgia, serif;
+  --font-body: var(--ff-body), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-sand);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-dark);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Display — verzálky, vysoký kontrast */
+  .display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    line-height: 1.04;
+  }
+
+  /* Navigace / tlačítka / eyebrow — verzálky s rozpalem */
+  .tracking-luxe {
+    letter-spacing: 0.18em;
+  }
+  .tracking-wide-luxe {
+    letter-spacing: 0.12em;
+  }
+
+  /* Monogram „S" vodoznak v krémových sekcích */
+  .monogram-s {
+    position: relative;
+  }
+  .monogram-s::before {
+    content: "S";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: min(70vw, 760px);
+    line-height: 1;
+    color: var(--color-gold);
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Bílý vnitřní rámeček ve fotokartách */
+  .inner-frame::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Jemná zlatá zrnitost přechodu nad tmavými fotkami */
+  .photo-overlay-dark {
+    background: linear-gradient(
+      to top,
+      rgba(20, 20, 18, 0.78) 0%,
+      rgba(20, 20, 18, 0.25) 45%,
+      rgba(20, 20, 18, 0.1) 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
